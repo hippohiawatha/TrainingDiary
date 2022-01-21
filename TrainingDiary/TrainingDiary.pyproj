@@ -17,6 +17,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>TrainingDiary</Name>
     <RootNamespace>TrainingDiary</RootNamespace>
+    <InterpreterId>MSBuild|MyVenv|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,6 +41,7 @@
     <Folder Include="TrainingDiary\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".env" />
     <Content Include="requirements.txt" />
     <Content Include="TrainingDiary\static\content\bootstrap.css" />
     <Content Include="TrainingDiary\static\content\bootstrap.min.css" />
@@ -67,6 +69,18 @@
     <Content Include="TrainingDiary\templates\contact.html" />
     <Content Include="TrainingDiary\templates\index.html" />
     <Content Include="TrainingDiary\templates\layout.html" />
+    <Content Include="TrainingDiary\templates\maxlifts.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="MyVenv\">
+      <Id>MyVenv</Id>
+      <Version>3.9</Version>
+      <Description>MyVenv (Python 3.9 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
