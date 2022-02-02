@@ -17,7 +17,9 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>TrainingDiary</Name>
     <RootNamespace>TrainingDiary</RootNamespace>
-    <InterpreterId>MSBuild|MyVenv|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <Environment>DATABASE_URL=postgresql://postgres:admin@localhost:5432/TrainingDiary
+SECRET_KEY=17552cae08f865252593a174ae396fd2</Environment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,7 +43,6 @@
     <Folder Include="TrainingDiary\templates\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".env" />
     <Content Include="requirements.txt" />
     <Content Include="TrainingDiary\static\content\bootstrap.css" />
     <Content Include="TrainingDiary\static\content\bootstrap.min.css" />
@@ -69,9 +70,24 @@
     <Content Include="TrainingDiary\templates\contact.html" />
     <Content Include="TrainingDiary\templates\index.html" />
     <Content Include="TrainingDiary\templates\layout.html" />
+    <Content Include="TrainingDiary\templates\login.html" />
+    <Content Include="TrainingDiary\templates\login_form.html" />
     <Content Include="TrainingDiary\templates\maxlifts.html" />
+    <Content Include="TrainingDiary\templates\register.html" />
+    <Content Include="TrainingDiary\templates\user_history.html" />
+    <Content Include="TrainingDiary\templates\welcome.html" />
+    <Content Include="TrainingDiary\templates\workout.html" />
   </ItemGroup>
   <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>0.0</Version>
+      <Description>env (Python 3.10 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
     <Interpreter Include="MyVenv\">
       <Id>MyVenv</Id>
       <Version>3.9</Version>

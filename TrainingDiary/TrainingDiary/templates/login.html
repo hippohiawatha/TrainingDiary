@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% if failed %}
+    {% if failed == "name" %}
+    <p>Username not found!</p>
+    {% include "login_form.html" %}
+    {% elif failed == "pw" %}
+    <p>Incorrect password!</p>
+    {% include "login_form.html" %}
+    {% endif %}
+{% else %}
+    {% include "login_form.html" %}
+{% endif %}
+
+{% endblock %}
