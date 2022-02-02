@@ -1,9 +1,10 @@
 # TrainingDiary
 
-Tarkoituksena rakentaa sovellus, johon käyttäjä voi kirjata treenituloksiaan perinteisen vihkon sijaan. 
-Samalla voisi saada helposti statistiikkaa aiemista treeneistä ja kovimmista tuloksistaan. 
+TrainingDiary on perinteisen vihon korvaava kuntosaliharjoitusten merkitsemiseen käytettävä sivusto.
+TD tarjoaa myös helpomman tavan seurata ja tilastoida esim. omia ennätyksiään. 
 
-Lisään myös valmiin treeniohjelman (Smolov), johon käyttäjä voi syöttää omia tuloksiaan saadakseen itselleen hyvän kyykky/penkki/maastaveto-ohjelman.
+Tarkoituksena on lisätä myös valmis treeniohjelma (Smolov), johon käyttäjä syöttää omat tuloksena saadakseen itselleen hyvän kyykky/penkki/maastaveto-ohjelman.
 
 Ajan salliessa voisi lisätä myös kaveritoiminnon, jolloin voisi vertailla itseään valitsemiensa henkilöiden kanssa. 
 Lisäksi voisi olla joku painoluokittainen tilastointi kovimmista tuloksista.
+
