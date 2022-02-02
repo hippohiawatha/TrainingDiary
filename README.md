@@ -8,6 +8,6 @@ TD tarjoaa myös helpomman tavan seurata ja tilastoida esim. omia ennätyksiää
 ### WIP:
 
 - Treeniohjelma (Smolov), johon voi laittaa omat painot saadakseen itselleen hyvän kyykky/penkki/maastaveto-ohjelman.
-- Kaveritoiminto, jolla voi vertailla itseään valitsemiensa henkilöiden kanssa.
+- Toiminto kavereiden kehityksen seuraamiseksi.
 - Leaderboardit painoluokkien mukaan.
 
