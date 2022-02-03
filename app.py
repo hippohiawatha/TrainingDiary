@@ -30,9 +30,12 @@ def home():
 
 @app.route("/maxlifts")
 def maxlifts():
-    result = db.session.execute("SELECT * FROM maxlifts")
-    data = result.fetchall()
-    return render_template("maxlifts.html", data=data[0][0])
+    if session["id"]:
+        result = db.session.execute("SELECT squat FROM maxlifts WHERE user_id=:id", {"id":session["id"]})
+        data = result.fetchall()
+        if data:
+            return render_template("maxlifts.html", data=data)
+    return render_template("maxlifts.html", data = "You haven't maxed out yet!")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -50,6 +53,7 @@ def login():
             hash_value = user.password
             if check_password_hash(hash_value, password):
                 session["username"] = username
+                session["id"] = user.id
                 return redirect("welcome")
             else:
                 return render_template("login.html", failed = "pw")
