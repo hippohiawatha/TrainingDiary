@@ -24,16 +24,12 @@
                 {% if session.username %}
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('about') }}">About</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
                     <li><a href="{{ url_for('maxlifts') }}">Max lifts</a></li>
                     <li><a href="/logout">Log out</a></li>
                 </ul>
                 {% else %}
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('about') }}">About</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">register</a></li>
                 </ul>
