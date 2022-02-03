@@ -39,10 +39,10 @@ ALTER TABLE deadliftsets ALTER COLUMN db_id ADD GENERATED ALWAYS AS IDENTITY (
 
 
 CREATE TABLE maxlifts (
-    "Bench" integer,
-    "Squat" integer,
-    "Deadlift" integer,
-    "UserID" integer NOT NULL
+    "bench" integer,
+    "squat" integer,
+    "deadlift" integer,
+    "user_id" integer NOT NULL
 );
 
 CREATE TABLE squatsets (
