@@ -11,3 +11,4 @@ TD tarjoaa myös helpomman tavan seurata ja tilastoida esim. omia ennätyksiää
 - Toiminto kavereiden kehityksen seuraamiseksi.
 - Leaderboardit painoluokkien mukaan.
 
+Voit kokeilla appia [täällä](https://tsoha-trainingdiary.herokuapp.com/)
