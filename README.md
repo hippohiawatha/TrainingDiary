@@ -20,6 +20,7 @@ Jonkin verran puuttuu myös perus checkejä. Esim. jos yrität mennä uuden tree
 
 ##### Jatkokehitys:
 
+- Lisää vaihtoehtoja liikkeille (ehkä joku add custom, eikä vain predefined)
 - Treeniohjelma (Smolov), johon voi laittaa omat painot saadakseen itselleen hyvän kyykky/penkki/maastaveto-ohjelman.
 - Toiminto kavereiden kehityksen seuraamiseksi.
 - Leaderboardit painoluokkien mukaan.
