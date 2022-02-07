@@ -83,18 +83,21 @@
 
         var weight = document.createElement("input");
         weight.name = inputName.concat("weight");
-        weight.type = Number;
+        weight.type = "number";
         weight.id = "weight";
+        weight.maxlength = 3;
 
         var sets = document.createElement("input");
         sets.name = inputName.concat("sets");
-        sets.type = Number;
+        sets.type = "number";
         sets.id = "sets";
+        sets.maxlength = 3;
 
         var reps = document.createElement("input");
         reps.name = inputName.concat("reps");
-        reps.type = Number;
+        reps.type = "number";
         reps.id = "reps";
+        reps.maxlength = 3;
 
         row.insertCell(0).appendChild(labelW).appendChild(weight);
         row.insertCell(1).appendChild(labelS).appendChild(sets);
