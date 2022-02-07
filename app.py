@@ -87,7 +87,7 @@ def register():
 def welcome():
     return render_template("welcome.html")
 
-@app.route("/workout", methods=["GET", "POST"])
+@app.route("/workout_input", methods=["GET", "POST"])
 def workout():
     if not session["username"]:
         return redirect("/")
@@ -118,9 +118,17 @@ def workout():
                 sql = "INSERT INTO benchsets (user_id, weight, sets, reps, workout_id) VALUES (:uid, :weight, :sets, :reps, :wid)"
                 db.session.execute(sql, {"uid":user_id, "weight":weight, "sets":sets, "reps":reps, "wid":workoutNumber})
                 db.session.commit()
-    return render_template("workout.html", workoutNo = workoutNumber)
+    return render_template("workout_input.html", workoutNo = workoutNumber)
 
 @app.route("/user_history")
 def user_history():
+    if not session["username"] or not session["id"]:
+        return redirect("/")
 
-    return render_template("user_history.html")
+    workouts = db.session.execute("SELECT workout_id FROM userworkouts WHERE user_id=:id", {"id":session["id"]}).fetchall()
+
+    return render_template("user_history.html", data = workouts)
+
+@app.route("/workout_view/<int:wid>")
+def workout_view(wid):
+    return render_template("workout_view.html")

@@ -2,6 +2,15 @@
 
 {% block content %}
 
+<h3>Select workout to see details!</h3>
+
+<ul>
+    {% for id in data %}
+
+    <li><a href={{ url_for('workout_view', wid=id.workout_id)}}> workout: {{id.workout_id}}</a></li>
+
+    {% endfor %}
+</ul>
 
 
 {% endblock %}
