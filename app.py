@@ -89,6 +89,9 @@ def welcome():
 
 @app.route("/workout", methods=["GET", "POST"])
 def workout():
+    if not session["username"]:
+        return redirect("/")
+
     username = session["username"]
     user_id = db.session.execute("SELECT id FROM users WHERE username=:name", {"name":username}).fetchone().id
     workouts = db.session.execute("SELECT MAX(workout_id) FROM userworkouts WHERE user_id=:id", {"id":user_id}).fetchone().max
@@ -119,4 +122,5 @@ def workout():
 
 @app.route("/user_history")
 def user_history():
+
     return render_template("user_history.html")
