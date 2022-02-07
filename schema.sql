@@ -1,5 +1,8 @@
 --Backup given by pgadmin 4
 
+
+--Tried to make it a bit more readable by reorganizing commands
+--The first set is for the the actual tables and the rest is for primary/foreign-key generation/modification
 CREATE TABLE benchsets (
     weight numeric,
     sets integer,
@@ -7,15 +10,6 @@ CREATE TABLE benchsets (
     workout_id integer NOT NULL,
     user_id integer NOT NULL,
     db_id integer NOT NULL
-);
-
-ALTER TABLE benchsets ALTER COLUMN db_id ADD GENERATED ALWAYS AS IDENTITY (
-    SEQUENCE NAME benchsets_db_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    MAXVALUE 10000
-    CACHE 1
 );
 
 CREATE TABLE deadliftsets (
@@ -27,23 +21,13 @@ CREATE TABLE deadliftsets (
     db_id integer NOT NULL
 );
 
-
-ALTER TABLE deadliftsets ALTER COLUMN db_id ADD GENERATED ALWAYS AS IDENTITY (
-    SEQUENCE NAME deadliftsets_db_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    MAXVALUE 10000
-    CACHE 1
-);
-
-
 CREATE TABLE maxlifts (
     "bench" integer,
     "squat" integer,
     "deadlift" integer,
     "user_id" integer NOT NULL
 );
+
 
 CREATE TABLE squatsets (
     weight integer,
@@ -52,6 +36,37 @@ CREATE TABLE squatsets (
     workout_id integer NOT NULL,
     user_id integer NOT NULL,
     db_id integer NOT NULL
+);
+
+CREATE TABLE users (
+    id integer NOT NULL,
+    username text,
+    password text
+);
+
+CREATE TABLE userworkouts (
+    workout_id integer NOT NULL,
+    user_id integer NOT NULL,
+    db_id integer NOT NULL
+);
+
+
+--PK/FK generation and/or sequencing
+ALTER TABLE benchsets ALTER COLUMN db_id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME benchsets_db_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    MAXVALUE 10000
+    CACHE 1
+);
+ALTER TABLE deadliftsets ALTER COLUMN db_id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME deadliftsets_db_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    MAXVALUE 10000
+    CACHE 1
 );
 
 ALTER TABLE squatsets ALTER COLUMN db_id ADD GENERATED ALWAYS AS IDENTITY (
@@ -63,12 +78,6 @@ ALTER TABLE squatsets ALTER COLUMN db_id ADD GENERATED ALWAYS AS IDENTITY (
     CACHE 1
 );
 
-CREATE TABLE users (
-    id integer NOT NULL,
-    username text,
-    password text
-);
-
 CREATE SEQUENCE users_id_seq
     AS integer
     START WITH 1
@@ -76,14 +85,6 @@ CREATE SEQUENCE users_id_seq
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
-
-ALTER SEQUENCE users_id_seq OWNED BY users.id;
-
-CREATE TABLE userworkouts (
-    workout_id integer NOT NULL,
-    user_id integer NOT NULL,
-    db_id integer NOT NULL
-);
 
 ALTER TABLE userworkouts ALTER COLUMN db_id ADD GENERATED ALWAYS AS IDENTITY (
     SEQUENCE NAME userworkouts_db_id_seq
