@@ -13,7 +13,7 @@ Ennätykset eivät vielä kirjaudu mihinkään, joten niitä ei voi toistaiseksi
 
 ##### Tärkeimmät:
 
-- Register formin voisi tehdä vähän järkevämmäksi, mutta toistaiseksi tämä ihan perus riittää.
+- Register formista järkevämpi (error handling yms.)
 - Ennätyssivun implementointi
 - Treenien muokkaus/poistaminen
 
