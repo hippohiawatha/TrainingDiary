@@ -1,0 +1,19 @@
+<table class="table" id="squatview">
+    <caption>Squat</caption>
+    <thead>
+        <tr>
+            <th scope="col">Weight</th>
+            <th scope="col">Sets</th>
+            <th scope="col">Reps</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in range(squatsets|length)  %}
+        <tr>
+            <td>{{squatsets[i][0] or "-"}} </td>
+            <td>{{squatsets[i][1] or "-"}} </td>
+            <td>{{squatsets[i][2] or "-"}} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

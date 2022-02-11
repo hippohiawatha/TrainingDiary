@@ -1,0 +1,19 @@
+<table class="table" id="deadliftview">
+    <caption>Deadlift</caption>
+    <thead>
+        <tr>
+            <th scope="col">Weight</th>
+            <th scope="col">Sets</th>
+            <th scope="col">Reps</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in range(deadliftsets|length)  %}
+        <tr>
+            <td>{{deadliftsets[i][0] or "-"}} </td>
+            <td>{{deadliftsets[i][1] or "-"}} </td>
+            <td>{{deadliftsets[i][2] or "-"}} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

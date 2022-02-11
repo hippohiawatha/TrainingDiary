@@ -1,0 +1,60 @@
+﻿<table class="table" id="benchTable">
+    <caption>Bench</caption>
+    <thead>
+        <tr>
+            <th scope="col">
+                <button class="btn btn-outline-success" type="button" onclick="addBenchSet()" id="addSetButton">
+                    <span class="glyphicon glyphicon-plus"></span> Add set
+                </button>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<script>
+    function addBenchSet() {
+        var table = document.getElementById("benchTable");
+        var row = table.insertRow(table.rows.length);
+        var ex = "benchset";
+        var setnumber = table.rows.length - 1;
+        var inputName = setnumber.toString().concat(ex);
+
+        var labelW = document.createElement("label");
+        labelW.htmlFor = "weight"
+        labelW.innerHTML = "Weight ";
+
+        var labelS = document.createElement("label");
+        labelS.htmlFor = "sets";
+        labelS.innerHTML = "Sets ";
+
+        var labelR = document.createElement("label");
+        labelR.htmlFor = "reps";
+        labelR.innerHTML = "Reps ";
+
+        var weight = document.createElement("input");
+        weight.name = inputName.concat("weight");
+        weight.type = "number";
+        weight.id = "weight";
+        weight.maxlength = 3;
+
+        var sets = document.createElement("input");
+        sets.name = inputName.concat("sets");
+        sets.type = "number";
+        sets.id = "sets";
+        sets.maxlength = 3;
+
+        var reps = document.createElement("input");
+        reps.name = inputName.concat("reps");
+        reps.type = "number";
+        reps.id = "reps";
+        reps.maxlength = 3;
+
+        row.insertCell(0).appendChild(labelW).appendChild(weight);
+        row.insertCell(1).appendChild(labelS).appendChild(sets);
+        row.insertCell(2).appendChild(labelR).appendChild(reps);
+
+        document.getElementById("benchsets").value = setnumber;
+    }
+</script>

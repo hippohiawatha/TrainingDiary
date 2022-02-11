@@ -40,3 +40,11 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+#addSetButton {
+}
+
+.table caption {
+    font-weight: bold;
+    text-align: left
+}

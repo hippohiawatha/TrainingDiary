@@ -1,0 +1,19 @@
+<table class="table" id="benchview">
+    <caption>Bench</caption>
+    <thead>
+        <tr>
+            <th scope="col">Weight</th>
+            <th scope="col">Sets</th>
+            <th scope="col">Reps</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in range(benchsets|length)  %}
+        <tr>
+            <td>{{benchsets[i][0] or "-"}} </td>
+            <td>{{benchsets[i][1] or "-"}} </td>
+            <td>{{benchsets[i][2] or "-"}} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
