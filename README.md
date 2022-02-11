@@ -24,4 +24,4 @@ Ennätykset eivät vielä kirjaudu mihinkään, joten niitä ei voi toistaiseksi
 - Toiminto kavereiden kehityksen seuraamiseksi.
 - Leaderboardit painoluokkien mukaan.
 
-Voit kokeilla appia [täällä](https://tsoha-trainingdiary.herokuapp.com/)
+Voit kirjata treenejäsi [täällä](https://tsoha-trainingdiary.herokuapp.com/)
