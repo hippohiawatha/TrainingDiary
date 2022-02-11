@@ -5,19 +5,17 @@ TD tarjoaa myös helpomman tavan seurata ja tilastoida esim. omia ennätyksiää
 
 ### Nykytilanne/käyttöohjeita:
 
-Rekisteröidy tai kirjaudu sivulle. Kirjauduttuasi voit lisätä treeniohjelmia, mutta vain penkkiohjelmien lisäys toimii tällä hetkellä. 
-Treenihistorian sivu listaa käyttäjän treenit, mutta treenien linkit johtavat toistaiseksi vain tyhjälle sivulle.
+Rekisteröidy tai kirjaudu sivulle. Kirjauduttuasi voit lisätä treenejä ja/tai katsoa vanhoja treenejäsi.
+Ennätykset eivät vielä kirjaudu mihinkään, joten niitä ei voi toistaiseksi ihailla.
 
-Jonkin verran puuttuu myös perus checkejä. Esim. jos yrität mennä uuden treenin sivulle ilman, että olet kirjautunut sisään, niin saat vain internal server errorin. Jokin verran olen yrittänyt näitä korjata, mutta voi olla että jotain on jäänyt.
 
 ### WIP:
 
 ##### Tärkeimmät:
 
-- Ainakin maastaveto- ja kyykkytreenien lisäämisen implementointi.
-- Yleinen arkkitehtuuri (tällä hetkellä esim. app.py täynnä tavaraa joka olisi hyvä laittaa muualle -> koodi ei kovin nättiä)
 - Register formin voisi tehdä vähän järkevämmäksi, mutta toistaiseksi tämä ihan perus riittää.
-- Treenihistorian implementointi
+- Ennätyssivun implementointi
+- Treenien muokkaus/poistaminen
 
 ##### Jatkokehitys:
 
