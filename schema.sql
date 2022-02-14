@@ -13,7 +13,16 @@ CREATE TABLE benchsets (
 );
 
 CREATE TABLE deadliftsets (
-    weight integer,
+    weight numeric,
+    sets integer,
+    reps integer,
+    workout_id integer NOT NULL,
+    user_id integer NOT NULL,
+    db_id integer NOT NULL
+);
+
+CREATE TABLE squatsets (
+    weight numeric,
     sets integer,
     reps integer,
     workout_id integer NOT NULL,
@@ -26,16 +35,6 @@ CREATE TABLE maxlifts (
     "squat" integer,
     "deadlift" integer,
     "user_id" integer NOT NULL
-);
-
-
-CREATE TABLE squatsets (
-    weight integer,
-    sets integer,
-    reps integer,
-    workout_id integer NOT NULL,
-    user_id integer NOT NULL,
-    db_id integer NOT NULL
 );
 
 CREATE TABLE users (

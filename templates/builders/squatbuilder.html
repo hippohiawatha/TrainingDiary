@@ -34,18 +34,21 @@
         labelR.innerHTML = "Reps ";
 
         var weight = document.createElement("input");
+        weight.classList.add("form-control");
         weight.name = inputName.concat("weight");
         weight.type = "number";
         weight.id = "weight";
         weight.maxlength = 3;
 
         var sets = document.createElement("input");
+        sets.classList.add("form-control");
         sets.name = inputName.concat("sets");
         sets.type = "number";
         sets.id = "sets";
         sets.maxlength = 3;
 
         var reps = document.createElement("input");
+        reps.classList.add("form-control");
         reps.name = inputName.concat("reps");
         reps.type = "number";
         reps.id = "reps";
