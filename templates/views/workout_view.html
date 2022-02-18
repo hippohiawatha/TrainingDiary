@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h3>{{workoutName or "workout: " + wid|string }}</h3>
+<h3>{{workoutName}}</h3>
 
 {% if benchsets %}
     {% with benchsets=benchsets %}
