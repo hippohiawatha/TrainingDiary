@@ -5,9 +5,13 @@
 <h3>Select workout to see details!</h3>
 
 <ul>
-    {% for id in data %}
+    {% for entry in data %}
 
-    <li><a href={{ url_for('workout_view', wid=id.workout_id)}}> workout: {{id.workout_id}}</a></li>
+    <li>
+        <a href={{ url_for('workout_view', wid=entry.workout_id)}}> 
+            {{entry.displayname or "workout: " + entry.workout_id|string}} 
+        </a>
+    </li>
 
     {% endfor %}
 </ul>

@@ -2,9 +2,14 @@
 
 {% block content %}
 
-<h2>Workout {{workoutNo}}</h2>
+<br/>
 
 <form action="/workout_input" method="post" id="workoutForm">
+
+    <div class="form-group">
+        <input type="text" class="form-control" id="workoutName" name="workoutName" value="Workout {{workoutNo}}" />
+        <span class="glyphicon glyphicon-pencil input-group-text"></span>
+    </div>
 
     {% include "builders/benchbuilder.html" %}
     {% include "builders/squatbuilder.html" %}

@@ -2,8 +2,9 @@
 
 {% block content %}
 
-<h2> Your bench record is: {{data.bench}}</h2>
-<h2> Your squat record is: {{data.squat}}</h2>
-<h2> Your deadlift record is: {{data.deadlift}}</h2>
+<h3> Your bench record is: {{data.bench}}</h3>
+<h3> Your squat record is: {{data.squat}}</h3>
+<h3> Your deadlift record is: {{data.deadlift}}</h3>
 
+<h4> Total: {{data.bench + data.squat + data.deadlift}}</h4>
 {% endblock %}

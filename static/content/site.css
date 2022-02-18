@@ -46,5 +46,14 @@ input[type="checkbox"].input-validation-error {
 
 .table caption {
     font-weight: bold;
-    text-align: left
+    text-align: left;
+}
+
+#workoutName {
+    box-shadow: none;
+    border-style: none;
+    border-bottom: solid;
+    border-width: 1px;
+    border-radius: 0px;
+    font-size: 2em;
 }

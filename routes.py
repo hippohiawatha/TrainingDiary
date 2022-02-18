@@ -90,6 +90,7 @@ def workout_view(wid):
     benches = workouthandlers.bench_view(wid, session["id"])
     squats = workouthandlers.squat_view(wid, session["id"])
     deadlifts = workouthandlers.deadlift_view(wid, session["id"])
+    name = workouthandlers.workoutName(session["id"], wid)
 
-    return render_template("views/workout_view.html", benchsets = benches, squatsets = squats, deadliftsets = deadlifts, wid = wid)
+    return render_template("views/workout_view.html", benchsets = benches, squatsets = squats, deadliftsets = deadlifts, workoutName = name, wid=wid)
 

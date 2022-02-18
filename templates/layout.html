@@ -25,13 +25,15 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('maxlifts') }}">Max lifts</a></li>
-                    <li><a href="/logout">Log out</a></li>
+                    <li><a href="{{ url_for('workout') }}">New workout</a></li>
+                    <li><a href="{{ url_for('user_history') }}">History</a></li>
+                    <li><a style="color:red" href="/logout">Log out</a></li>
                 </ul>
                 {% else %}
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register">register</a></li>
+                    <li><a style="color:lightblue" href="/login">Login</a></li>
+                    <li><a style="color:lightblue" href="/register">Register</a></li>
                 </ul>
                 {% endif %}
             </div>

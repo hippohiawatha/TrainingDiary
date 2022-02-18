@@ -46,7 +46,8 @@ CREATE TABLE users (
 CREATE TABLE userworkouts (
     workout_id integer NOT NULL,
     user_id integer NOT NULL,
-    db_id integer NOT NULL
+    db_id integer NOT NULL,
+    displayname text
 );
 
 

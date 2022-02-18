@@ -2,18 +2,20 @@ from db import db
 from flask import session
 
 def workout(user_id, workout):
+    
     workoutNumber = latest_workout(user_id) + 1 or 1
     benchsets =  int(workout["benchsets"]) if workout["benchsets"] else None
     squatsets =  int(workout["squatsets"]) if workout["squatsets"] else  None
     deadliftsets = int(workout["deadliftsets"]) if workout["deadliftsets"] else None
+    workoutName =  workout["workoutName"] or "workout: " + str(workoutNumber)
     maxl = None
     newMax = False
     benchWeights = []
     squatWeights = []
     deadliftWeights = []
-
+    
     if benchsets is not None or squatsets is not None or deadliftsets is not None:
-        db.session.execute("INSERT INTO userworkouts (user_id, workout_id) VALUES (:uid, :wid)", {"uid":user_id, "wid":workoutNumber})
+        db.session.execute("INSERT INTO userworkouts (user_id, workout_id, displayname) VALUES (:uid, :wid, :dis)", {"uid":user_id, "wid":workoutNumber, "dis":workoutName})
         db.session.commit()
         maxl = maxlifts(user_id)
 
@@ -89,7 +91,7 @@ def latest_workout(user_id):
     return db.session.execute("SELECT MAX(workout_id) FROM userworkouts WHERE user_id=:id", {"id":user_id}).fetchone().max
 
 def user_history(user_id):
-    return db.session.execute("SELECT workout_id FROM userworkouts WHERE user_id=:id", {"id":user_id}).fetchall()
+    return db.session.execute("SELECT * FROM userworkouts WHERE user_id=:id", {"id":user_id}).fetchall()
 
 def bench_view(workout_id, user_id):
     return db.session.execute("SELECT weight, sets, reps FROM benchsets WHERE workout_id=:wid AND user_id=:uid", {"wid":workout_id, "uid":user_id}).fetchall()
@@ -99,8 +101,10 @@ def deadlift_view(workout_id, user_id):
     return db.session.execute("SELECT weight, sets, reps FROM deadliftsets WHERE workout_id=:wid AND user_id=:uid", {"wid":workout_id, "uid":user_id}).fetchall()
 
 def maxlifts(user_id):
-    #WIP
     return db.session.execute("SELECT * FROM maxlifts WHERE user_id=:id", {"id":user_id}).fetchone()
 
 def isNewMax(weight, previous):
     return weight > previous
+
+def workoutName(user_id, wid):
+    return db.session.execute("SELECT displayname FROM userworkouts WHERE user_id=:id AND workout_id=:wid", {"id":user_id, "wid":wid}).fetchone()
