@@ -6,5 +6,7 @@
 <h3> Your squat record is: {{data.squat}}</h3>
 <h3> Your deadlift record is: {{data.deadlift}}</h3>
 
-<h4> Total: {{data.bench + data.squat + data.deadlift or "can't calculate total"}}</h4>
+{% if data.bench and data.squat and data.deadlift %}
+    <h4> Total: {{data.bench + data.squat + data.deadlift}}</h4>
+{% endif %}
 {% endblock %}
