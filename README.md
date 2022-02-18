@@ -6,15 +6,13 @@ TD tarjoaa myös helpomman tavan seurata ja tilastoida esim. omia ennätyksiää
 ### Nykytilanne/käyttöohjeita:
 
 Rekisteröidy tai kirjaudu sivulle. Kirjauduttuasi voit lisätä treenejä ja/tai katsoa vanhoja treenejäsi.
-Ennätykset eivät vielä kirjaudu mihinkään, joten niitä ei voi toistaiseksi ihailla.
-
+Sovelluksen päätoiminnot ovat kunnossa. Jatkossa oman mielenkiinnon mukaan voi kyllä tehdä vielä paljon, mutta tätä palautusta varten sovellus on valmis.
 
 ### WIP:
 
 ##### Tärkeimmät:
 
 - Register formista järkevämpi (error handling yms.)
-- Ennätyssivun implementointi
 - Treenien muokkaus/poistaminen
 
 ##### Jatkokehitys:
