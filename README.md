@@ -9,7 +9,7 @@ Rekisteröidy tai kirjaudu sivulle. Kirjauduttuasi voit lisätä treenejä ja/ta
 Sovelluksen päätoiminnot ovat kunnossa. Jatkossa oman mielenkiinnon mukaan voi kyllä tehdä vielä paljon, mutta tätä palautusta varten sovellus on valmis.
 
 
-!! Uudella käyttäjällä ei jostain syysytä toimi new workout-sivu. Sovellusta voi käyttää käyttäjällä leo:leo !!
+##Huom!! Uudella käyttäjällä ei jostain syysytä toimi new workout-sivu. Sovellusta voi käyttää käyttäjällä leo:leo
 ### WIP:
 
 ##### Tärkeimmät:
