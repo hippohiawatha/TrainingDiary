@@ -8,6 +8,8 @@ TD tarjoaa myös helpomman tavan seurata ja tilastoida esim. omia ennätyksiää
 Rekisteröidy tai kirjaudu sivulle. Kirjauduttuasi voit lisätä treenejä ja/tai katsoa vanhoja treenejäsi.
 Sovelluksen päätoiminnot ovat kunnossa. Jatkossa oman mielenkiinnon mukaan voi kyllä tehdä vielä paljon, mutta tätä palautusta varten sovellus on valmis.
 
+
+!! Joillain käyttäjillä ei toimi new workout, mutta itsellä ainakin toimii chromella ja firefoxilla !! Toivottavasti ei osu omalle kohdalle.
 ### WIP:
 
 ##### Tärkeimmät:
