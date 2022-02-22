@@ -66,7 +66,8 @@ def workout():
 
     username = session["username"]
     user_id = session["id"]
-    workoutNumber = workouthandlers.latest_workout(user_id) + 1 or 1
+    latest = workouthandlers.latest_workout(user_id)
+    workoutNumber = latest + 1 if latest is not None else 1
 
     if request.method == "POST":
         workouthandlers.workout(user_id, request.form)

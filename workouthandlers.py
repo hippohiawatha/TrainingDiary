@@ -3,7 +3,8 @@ from flask import session
 
 def workout(user_id, workout):
     
-    workoutNumber = latest_workout(user_id) + 1 or 1
+    latest = latest_workout(user_id)
+    workoutNumber = latest + 1 if latest is not None else 1
     benchsets =  int(workout["benchsets"]) if workout["benchsets"] else None
     squatsets =  int(workout["squatsets"]) if workout["squatsets"] else  None
     deadliftsets = int(workout["deadliftsets"]) if workout["deadliftsets"] else None
