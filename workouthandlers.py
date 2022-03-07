@@ -96,8 +96,10 @@ def user_history(user_id):
 
 def bench_view(workout_id, user_id):
     return db.session.execute("SELECT weight, sets, reps FROM benchsets WHERE workout_id=:wid AND user_id=:uid", {"wid":workout_id, "uid":user_id}).fetchall()
+
 def squat_view(workout_id, user_id):
     return db.session.execute("SELECT weight, sets, reps FROM squatsets WHERE workout_id=:wid AND user_id=:uid", {"wid":workout_id, "uid":user_id}).fetchall()
+
 def deadlift_view(workout_id, user_id):
     return db.session.execute("SELECT weight, sets, reps FROM deadliftsets WHERE workout_id=:wid AND user_id=:uid", {"wid":workout_id, "uid":user_id}).fetchall()
 

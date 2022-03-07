@@ -1,4 +1,5 @@
 from flask.helpers import url_for
+from flask.wrappers import Request
 from app import app
 from db import db
 from flask import redirect, render_template, request, session
@@ -63,15 +64,17 @@ def welcome():
 def workout():
     if not session["username"]:
         return redirect("/")
-
-    username = session["username"]
+    
     user_id = session["id"]
     latest = workouthandlers.latest_workout(user_id)
     workoutNumber = latest + 1 if latest is not None else 1
 
     if request.method == "POST":
-        workouthandlers.workout(user_id, request.form)
-        return redirect(url_for("workout_view", wid = workoutNumber))
+        if isCorrectUser(request.form["csrf_token"]):
+            workouthandlers.workout(user_id, request.form)
+            return redirect(url_for("workout_view", wid = workoutNumber))
+        else: 
+            return redirect(url_for("forbidden"))
 
     return render_template("workout_input.html", workoutNo = workoutNumber)
 
@@ -97,3 +100,11 @@ def workout_view(wid):
 
     return render_template("views/workout_view.html", benchsets = benches, squatsets = squats, deadliftsets = deadlifts, workoutName = displayName, wid=wid)
 
+@app.route("/forbidden")
+def forbidden():
+    return render_template("forbidden.html")
+
+def isCorrectUser(token):
+    if session["csrf_token"] != token:
+        return False
+    return True

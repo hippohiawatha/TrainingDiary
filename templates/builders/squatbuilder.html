@@ -39,6 +39,7 @@
         weight.type = "number";
         weight.id = "weight";
         weight.maxlength = 3;
+        weight.value = 0;
 
         var sets = document.createElement("input");
         sets.classList.add("form-control");
@@ -46,6 +47,7 @@
         sets.type = "number";
         sets.id = "sets";
         sets.maxlength = 3;
+        sets.value = 0;
 
         var reps = document.createElement("input");
         reps.classList.add("form-control");
@@ -53,6 +55,7 @@
         reps.type = "number";
         reps.id = "reps";
         reps.maxlength = 3;
+        reps.value = 0;
 
         row.insertCell(0).appendChild(labelW).appendChild(weight);
         row.insertCell(1).appendChild(labelS).appendChild(sets);
